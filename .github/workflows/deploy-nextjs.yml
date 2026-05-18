@@ -29,6 +29,8 @@ jobs:
           node-version: '20'
           cache: 'npm'
           cache-dependency-path: web/package-lock.json
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
       - name: Install dependencies
         working-directory: ./web
@@ -58,3 +60,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
